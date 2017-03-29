@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 const CardSection = (props) => (
-  <View style={styles.viewStyle}>
+  <View style={[styles.viewStyle, props.style]}>
     {props.children}
   </View>
 );
