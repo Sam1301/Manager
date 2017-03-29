@@ -8,7 +8,7 @@ import {
 const INITIAL_STATE = {
   name: '',
   phone: '',
-  shift: ''
+  shift: '',
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -18,7 +18,7 @@ export default (state = INITIAL_STATE, action) => {
     case EMPLOYEE_FETCH_SUCCESS:
         return { ...state, employees: action.payload };
     case EMPLOYEE_CREATE:
-      return { ...INITIAL_STATE };
+      return INITIAL_STATE;
     default:
       return state;
   }
