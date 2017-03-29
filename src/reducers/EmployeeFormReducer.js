@@ -1,4 +1,8 @@
-import { EMPLOYEE_UPDATE } from '../actions/types';
+import {
+  EMPLOYEE_UPDATE,
+  EMPLOYEE_FETCH_SUCCESS,
+  EMPLOYEE_CREATE
+} from '../actions/types';
 
 // handle everything to do with authentication
 const INITIAL_STATE = {
@@ -10,9 +14,11 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case EMPLOYEE_UPDATE:
-    console.log('inside reducer');
-    console.log(action);
       return { ...state, [action.payload.prop]: action.payload.value };
+    case EMPLOYEE_FETCH_SUCCESS:
+        return { ...state, employees: action.payload };
+    case EMPLOYEE_CREATE:
+      return { ...INITIAL_STATE };
     default:
       return state;
   }
