@@ -3,6 +3,7 @@ import React from 'react';
 import LoginForm from './components/LoginForm';
 import EmployeeList from './components/EmployeeList';
 import EmployeeCreate from './components/EmployeeCreate';
+import EmployeeEdit from './components/EmployeeEdit';
 
 const RouterComponent = () => (
     <Router sceneStyle={{ paddingTop: 65 }}>
@@ -27,6 +28,11 @@ const RouterComponent = () => (
           key='empCreate'
           component={EmployeeCreate}
           title='New Employee'
+        />
+        <Scene
+          key='empEdit'
+          component={EmployeeEdit}
+          title='Edit'
         />
       </Scene>
     </Router>

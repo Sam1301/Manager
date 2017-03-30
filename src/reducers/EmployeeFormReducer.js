@@ -1,7 +1,8 @@
 import {
   EMPLOYEE_UPDATE,
   EMPLOYEE_FETCH_SUCCESS,
-  EMPLOYEE_CREATE
+  EMPLOYEE_CREATE,
+  EMPLOYEE_SAVE_SUCCESS
 } from '../actions/types';
 
 // handle everything to do with authentication
@@ -18,6 +19,8 @@ export default (state = INITIAL_STATE, action) => {
     case EMPLOYEE_FETCH_SUCCESS:
         return { ...state, employees: action.payload };
     case EMPLOYEE_CREATE:
+      return INITIAL_STATE;
+    case EMPLOYEE_SAVE_SUCCESS:
       return INITIAL_STATE;
     default:
       return state;
